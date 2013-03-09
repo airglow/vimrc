@@ -1,11 +1,10 @@
-set nocompatible
-filetype off
+set nocompatible               " be iMproved
+filetype off                   " required!
 
-"Vundle Config---------------------------------------------------------------
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-
-Bundle 'gmarik/vundle' "required
+"VUNDLE-----------------------------------------------------------------------
+Bundle 'gmarik/vundle'
 
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
@@ -17,6 +16,8 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdcommenter.git'
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'altercation/vim-colors-solarized.git'
+Bundle 'SirVer/ultisnips.git'
+"Bundle 'msanders/snipmate.vim'
 "Bundle 'Syntastic'
 
 "Bundle 'exclipy/clang_complete.git'
@@ -32,9 +33,9 @@ filetype plugin indent on     " required!
 "autocmd VimEnter * NERDTree
 "Color Setting---------------------------------------------------------------
 if has('gui_running')
-    set background=light
+	set background=light
 else
-    set background=dark
+	set background=dark
 endif
 colorscheme solarized
 let g:solarized_termcolors=256
@@ -46,6 +47,7 @@ set number
 set hlsearch
 set ic
 set scs
+set noswapfile
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 autocmd VimEnter * wincmd p
 filetype plugin indent on
@@ -60,6 +62,12 @@ let g:Powerline_symbols = 'fancy'
 "set shiftwidth=2
 "set autoindent
 "set expandtab
+
+let g:UltiSnipsExpandTrigger = "<c-g>"
+let g:UltiSnipsListSnippets = "<c-m-s>"
+let g:UltiSnipsJumpForwardTrigger = "<m-h>"
+let g:UltiSnipsJumpBackwardTrigger = "<m-t>"
+let g:snips_author = 'Raphael Memmesheimer'
 
 "----------------------------------------------------------------------------
 
