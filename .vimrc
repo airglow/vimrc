@@ -25,6 +25,12 @@ Bundle 'SirVer/ultisnips.git'
 Bundle 'FuzzyFinder'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
+"Bundle 'vimoutliner/vimoutliner.git'
+"Bundle 'vimez/vim-showmarks.git'
+Bundle 'sjl/gundo.vim.git'
+Bundle 'a.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'nelstrom/vim-markdown-folding'
 " ...
 
 filetype plugin indent on     " required!
@@ -48,6 +54,8 @@ set hlsearch
 set ic
 set scs
 set noswapfile
+set clipboard=unnamed
+set foldmethod=syntax
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 autocmd VimEnter * wincmd p
 filetype plugin indent on
@@ -56,17 +64,22 @@ set shiftwidth=4    " numbers of spaces to (auto)indent
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show Unicode glyphs
+set winaltkeys=no " turns of the Alt key bindings to the gui menu
 
 let g:Powerline_symbols = 'fancy'
+
+"let g:syntastic_cpp_checkers=['gcc']
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
 "set smarttab
 "set shiftwidth=2
 "set autoindent
 "set expandtab
 
-let g:UltiSnipsExpandTrigger = "<c-g>"
-let g:UltiSnipsListSnippets = "<c-m-s>"
-let g:UltiSnipsJumpForwardTrigger = "<m-h>"
-let g:UltiSnipsJumpBackwardTrigger = "<m-t>"
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsListSnippets = "<c-tab>"
 let g:snips_author = 'Raphael Memmesheimer'
 
 "----------------------------------------------------------------------------
@@ -75,6 +88,7 @@ let g:snips_author = 'Raphael Memmesheimer'
 map <F2> :NERDTreeToggle <CR>
 map <F3> :FufFile <CR>
 map <F4> :FufBuffer <CR>
+nnoremap <F5> :GundoToggle<CR>
 map <F11> :make -j <CR>
 "----------------------------------------------------------------------------
 
@@ -93,6 +107,7 @@ inoremap <C-S-UP> <Esc>:m-2<CR>==gi
 vnoremap <C-S-DOWN> :m'>+<CR>gv=gv
 vnoremap <C-S-UP> :m-2<CR>gv=gv
 "----------------------------------------------------------------------------
+"map <C-T> <Esc>:tabnew<CR>
 
 " Invisible Characters ------------------------------------------------------
 " Shortcut to rapidly toggle `set list`
