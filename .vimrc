@@ -25,13 +25,16 @@ Bundle 'SirVer/ultisnips.git'
 Bundle 'FuzzyFinder'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
+
 "Bundle 'vimoutliner/vimoutliner.git'
 "Bundle 'vimez/vim-showmarks.git'
 Bundle 'sjl/gundo.vim.git'
 Bundle 'a.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'nelstrom/vim-markdown-folding'
+Bundle 'dhruvasagar/vim-table-mode.git'
 " ...
+Bundle 'godlygeek/tabular'
 
 filetype plugin indent on     " required!
 "----------------------------------------------------------------------------
