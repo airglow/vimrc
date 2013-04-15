@@ -35,6 +35,7 @@ Bundle 'nelstrom/vim-markdown-folding'
 Bundle 'dhruvasagar/vim-table-mode.git'
 " ...
 Bundle 'godlygeek/tabular'
+Bundle 'terryma/vim-multiple-cursors'
 
 filetype plugin indent on     " required!
 "----------------------------------------------------------------------------
